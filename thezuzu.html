@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>La Théorie de la Contingence — Présentation complète (HTML + CSS)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Diaporama interactif plein écran (HTML + CSS uniquement) sur la théorie de la contingence en gestion d'entreprise.">
+</head>
+<body>
+  <!-- Radios (navigation CSS-only) -->
+  <!-- 30 slides -->
+  <input type="radio" name="slide" id="s01" checked>
+  <input type="radio" name="slide" id="s02">
+  <input type="radio" name="slide" id="s03">
+  <input type="radio" name="slide" id="s04">
+  <input type="radio" name="slide" id="s05">
+  <input type="radio" name="slide" id="s06">
+  <input type="radio" name="slide" id="s07">
+  <input type="radio" name="slide" id="s08">
+  <input type="radio" name="slide" id="s09">
+  <input type="radio" name="slide" id="s10">
+  <input type="radio" name="slide" id="s11">
+  <input type="radio" name="slide" id="s12">
+  <input type="radio" name="slide" id="s13">
+  <input type="radio" name="slide" id="s14">
+  <input type="radio" name="slide" id="s15">
+  <input type="radio" name="slide" id="s16">
+  <input type="radio" name="slide" id="s17">
+  <input type="radio" name="slide" id="s18">
+  <input type="radio" name="slide" id="s19">
+  <input type="radio" name="slide" id="s20">
+  <input type="radio" name="slide" id="s21">
+  <input type="radio" name="slide" id="s22">
+  <input type="radio" name="slide" id="s23">
+  <input type="radio" name="slide" id="s24">
+  <input type="radio" name="slide" id="s25">
+  <input type="radio" name="slide" id="s26">
+  <input type="radio" name="slide" id="s27">
+  <input type="radio" name="slide" id="s28">
+  <input type="radio" name="slide" id="s29">
+  <input type="radio" name="slide" id="s30">
+
+  <!-- Topbar : TOC rapide -->
+  <header class="topbar" role="banner" aria-label="Barre de navigation">
+    <div class="topbar-inner">
+      <div class="brand">La Théorie de la Contingence — Ali · Ilyass · Ayman</div>
+      <nav class="toc" aria-label="Table des matières rapide">
+        <!-- jump labels -->
+        <label for="s01" tabindex="0">Intro</label>
+        <label for="s05" tabindex="0">Auteurs</label>
+        <label for="s09" tabindex="0">Variables</label>
+        <label for="s13" tabindex="0">Modèles</label>
+        <label for="s17" tabindex="0">Cas</label>
+        <label for="s21" tabindex="0">Implémentation</label>
+        <label for="s25" tabindex="0">Mesures</label>
+        <label for="s29" tabindex="0">Conclusion</label>
+      </nav>
+      <div class="controls-hint">Touches: Tab → sélectionner boutons, Enter pour activer</div>
+    </div>
+  </header>
+
+  <!-- Fullscreen slides container -->
+  <main class="slides" role="main" aria-live="polite">
+    <!-- Each section is a full viewport slide. Navigation labels inside. -->
+    <!-- Slide 1: Titre / accueil -->
+    <section class="slide slide-hero s01" aria-label="Titre">
+      <div class="panel">
+        <div class="hero-left">
+          <h1>La Théorie de la Contingence</h1>
+          <h2>Travail réalisé par : Ali – Ilyass – Ayman</h2>
+          <p class="kicker">Principe central : il n'existe pas d'organisation « universelle » — l'efficacité dépend du contexte (les contingences).</p>
+          <div class="meta">
+            <span>Durée estimée de lecture : 45+ minutes</span>
+            <span>Slides : 30</span>
+          </div>
+        </div>
+        <div class="hero-right">
+          <!-- decorative SVG with subtle animation -->
+          <svg class="hero-svg" viewBox="0 0 600 360" role="img" aria-hidden="true">
+            <defs>
+              <linearGradient id="hg" x1="0" x2="1">
+                <stop offset="0" stop-color="#0369a1"/>
+                <stop offset="1" stop-color="#047857"/>
+              </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" rx="16" fill="rgba(255,255,255,0.85)"/>
+            <g transform="translate(40,30)">
+              <rect x="0" y="0" width="520" height="300" rx="12" fill="url(#hg)" opacity="0.09"/>
+              <g class="nodes">
+                <circle cx="100" cy="90" r="26" fill="#0369a1"/>
+                <circle cx="220" cy="60" r="20" fill="#047857"/>
+                <circle cx="360" cy="120" r="22" fill="#0f172a"/>
+                <circle cx="240" cy="220" r="18" fill="#0ea5a5"/>
+                <line x1="100" y1="90" x2="220" y2="60" stroke="#0369a1" stroke-width="3" opacity="0.9"/>
+                <line x1="220" y1="60" x2="360" y2="120" stroke="#047857" stroke-width="3" opacity="0.9"/>
+                <line x1="100" y1="90" x2="240" y2="220" stroke="#0f172a" stroke-width="3" opacity="0.9"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <nav class="nav">
+          <label for="s30" class="btn prev" title="Aller à la fin">Précédent</label>
+          <label for="s02" class="btn next" title="Slide suivante">Suivant</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 2: Sommaire détaillé -->
+    <section class="slide s02" aria-label="Sommaire">
+      <div class="panel">
+        <h2>Sommaire</h2>
+        <div class="toc-list">
+          <ol>
+            <li>Introduction & définition (s03)</li>
+            <li>Histoire & évolutions (s04)</li>
+            <li>Auteurs clés & apports (s05-s06)</li>
+            <li>Variables de contingence (s09-s10)</li>
+            <li>Modèles théoriques (s13-s15)</li>
+            <li>Méthodes empiriques et preuves (s11-s12)</li>
+            <li>Cas pratiques (s17-s20)</li>
+            <li>Implémentation & roadmap (s21-s24)</li>
+            <li>Métriques, KPIs & évaluation (s25-s26)</li>
+            <li>Limites, critiques et extensions modernes (s27-s28)</li>
+            <li>Exercices, Q&A, Bibliographie (s29-s30)</li>
+          </ol>
+        </div>
+
+        <nav class="nav">
+          <label for="s01" class="btn prev">Précédent</label>
+          <label for="s03" class="btn next">Histoire</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 3: Définition détaillée -->
+    <section class="slide s03" aria-label="Définition">
+      <div class="panel">
+        <h2>Définition détaillée</h2>
+        <div class="content">
+          <p>La théorie de la contingence en management propose que l'efficacité organisationnelle dépend d'une adéquation entre la structure, les processus, la stratégie et les caractéristiques de l'environnement. Elle affirme qu'il n'existe pas de "meilleure manière" universelle ; la meilleure structure dépend d'un ensemble de contingences (variables).</p>
+
+          <h3>Éléments clés</h3>
+          <ul>
+            <li>Contingence = condition externe ou interne influençant le choix organisationnel.</li>
+            <li>Objectif : alignement (fit) entre éléments organisationnels et environnement.</li>
+            <li>Approche: empirique – tester, diagnostiquer, adapter.</li>
+          </ul>
+
+          <aside class="note">
+            Note : le concept de "fit" peut être statique (structure fixe) ou dynamique (réajustement continu).
+          </aside>
+        </div>
+
+        <nav class="nav">
+          <label for="s02" class="btn prev">Précédent</label>
+          <label for="s04" class="btn next">Suite</label>
+          <div class="updown">
+            <label for="s01" class="btn up" title="Remonter">Haut</label>
+            <label for="s05" class="btn down" title="Descendre">Bas</label>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 4: Histoire & contexte -->
+    <section class="slide s04" aria-label="Histoire">
+      <div class="panel">
+        <h2>Histoire & Contexte intellectuel</h2>
+        <div class="content">
+          <p>Le courant de la contingence est né en réaction aux théories universelles (Taylorisme, Fayol). Il prend forme surtout dans les années 1960 avec des études montrant que des formes organisationnelles différentes réussissent selon des contextes différents.</p>
+
+          <h3>Chronologie synthétique</h3>
+          <ul>
+            <li>Avant 1950 : management classique (Fayol, Taylor)</li>
+            <li>Années 1950–1960 : montée des approches systémiques</li>
+            <li>1961 : Burns & Stalker — mécaniste vs organique</li>
+            <li>1967 : Lawrence & Lorsch — différenciation & intégration</li>
+            <li>1965 : Woodward — technologie & structure</li>
+            <li>1970s–2000s : extensions (institutionnelle, ressources, capacités dynamiques)</li>
+          </ul>
+        </div>
+
+        <nav class="nav">
+          <label for="s03" class="btn prev">Précédent</label>
+          <label for="s05" class="btn next">Auteurs</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 5: Auteurs (partie 1) -->
+    <section class="slide s05" aria-label="Auteurs 1">
+      <div class="panel">
+        <h2>Auteurs clés — Partie 1</h2>
+        <div class="grid-2">
+          <article>
+            <h3>Henri Fayol (1841–1925)</h3>
+            <p>A posé les bases de l'administration : fonctions de gestion, principes. Même si sa vision est "classique", elle est utile comme point de départ pour comprendre pourquoi les organisations structurées émergent.</p>
+          </article>
+          <article>
+            <h3>Tom Burns & G.M. Stalker (1961)</h3>
+            <p>Distinction cruciale : systèmes mécanistes (hiérarchie, formalisation) vs organiques (flexibles, communication informelle). Leur travail montre l'adaptation selon la stabilité de l'environnement.</p>
+          </article>
+          <article>
+            <h3>Paul Lawrence & Jay Lorsch (1967)</h3>
+            <p>Concepts de différenciation (spécialisation des unités) et d'intégration (mécanismes pour coordonner). L'équilibre diffère selon l'environnement ; d'où la nécessité d'ajuster coordination et intégration.</p>
+          </article>
+          <article>
+            <h3>Joan Woodward (1965)</h3>
+            <p>Relation technologie-structure : types de production (unitaire, en série, continue) mènent à des structures différentes et à des niveaux d'efficacité variables.</p>
+          </article>
+        </div>
+
+        <nav class="nav">
+          <label for="s04" class="btn prev">Précédent</label>
+          <label for="s06" class="btn next">Suite auteurs</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 6: Auteurs (partie 2) -->
+    <section class="slide s06" aria-label="Auteurs 2">
+      <div class="panel">
+        <h2>Auteurs & extensions modernes</h2>
+        <div class="content">
+          <ul>
+            <li><strong>Jay Galbraith</strong> : conception d’organisation — flux d'information, slack resources, rôle des mécanismes de coordination.</li>
+            <li><strong>Resource Dependence</strong> : comment la dépendance à des fournisseurs/clients influence la structure et la stratégie.</li>
+            <li><strong>Capacités dynamiques</strong> : organisations qui apprennent et reconfigurent leurs ressources pour s'adapter (Teece et al.).</li>
+            <li><strong>Institutionnalistes</strong> : normes, régulations et pressions sociales aussi forcent certaines configurations.</li>
+          </ul>
+        </div>
+
+        <nav class="nav">
+          <label for="s05" class="btn prev">Précédent</label>
+          <label for="s07" class="btn next">Approches</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 7: Approches méthodologiques -->
+    <section class="slide s07" aria-label="Méthodes">
+      <div class="panel">
+        <h2>Méthodes de recherche utilisées</h2>
+        <div class="content">
+          <ol>
+            <li>Études de cas comparatives (qualitatives) — profondeur et contexte.</li>
+            <li>Enquêtes multisectorielles (quantitatives) — tests de corrélation et modèles multivariés.</li>
+            <li>Analyses longitudinales — mesurer changement et adaptation dans le temps.</li>
+            <li>Expérimentations (moins fréquentes) / simulations organisationnelles.</li>
+          </ol>
+
+          <p class="tip">Conseil : combiner méthodes qualitatives et quantitatives pour valider le "fit" organisationnel.</p>
+        </div>
+
+        <nav class="nav">
+          <label for="s06" class="btn prev">Précédent</label>
+          <label for="s08" class="btn next">Résultats</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 8: Résultats empiriques -->
+    <section class="slide s08" aria-label="Résultats">
+      <div class="panel">
+        <h2>Résultats empiriques — tendances générales</h2>
+        <div class="content">
+          <ul>
+            <li>Le "fit" améliore la performance, mais la relation est souvent non linéaire.</li>
+            <li>Effets sectoriels forts : certaines contingences pèsent plus dans certaines industries (ex. technologie).</li>
+            <li>La capacité d'apprentissage et la flexibilité organisationnelle sont souvent des modérateurs importants.</li>
+            <li>Résultats hétérogènes : nécessité d'analyse contextuelle fine.</li>
+          </ul>
+        </div>
+
+        <nav class="nav">
+          <label for="s07" class="btn prev">Précédent</label>
+          <label for="s09" class="btn next">Variables</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 9: Variables principales (partie 1) -->
+    <section class="slide s09" aria-label="Variables 1">
+      <div class="panel">
+        <h2>Variables de contingence — Environnement</h2>
+        <div class="content scrollable">
+          <p>L'environnement inclut l'incertitude, la vitesse du changement, la concurrence, la réglementation. Ces facteurs dictent la nécessité d'une structure flexible ou formelle.</p>
+          <h3>Examples</h3>
+          <ul>
+            <li>Marché stable : structures formelles, processus standardisés.</li>
+            <li>Marché instable : structures organiques, équipes autonomes, cycles courts.</li>
+            <li>Réglementation stricte : formalisation et compliance accrues.</li>
+          </ul>
+        </div>
+
+        <nav class="nav">
+          <label for="s08" class="btn prev">Précédent</label>
+          <label for="s10" class="btn next">Technologie & Taille</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 10: Variables (partie 2) -->
+    <section class="slide s10" aria-label="Variables 2">
+      <div class="panel">
+        <h2>Variables : Technologie, Taille, Stratégie, Culture</h2>
+        <div class="content scrollable">
+          <h3>Technologie</h3>
+          <p>Les tâches routinières favorisent la formalisation ; les tâches analytiques ou créatives requièrent autonomie et coordination informelle.</p>
+
+          <h3>Taille</h3>
+          <p>Grande taille → besoin d'une hiérarchie et de formalisation ; petite structure → plus d'agilité.</p>
+
+          <h3>Stratégie</h3>
+          <p>Stratégie d'innovation vs stratégie de réduction de coûts mènent à structures différentes.</p>
+
+          <h3>Culture</h3>
+          <p>La culture organisationnelle peut faciliter ou freiner les changements structurels.</p>
+        </div>
+
+        <nav class="nav">
+          <label for="s09" class="btn prev">Précédent</label>
+          <label for="s11" class="btn next">Variables & Mesure</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 11: Mesurer les variables -->
+    <section class="slide s11" aria-label="Mesurer">
+      <div class="panel">
+        <h2>Comment mesurer les contingences ?</h2>
+        <div class="content">
+          <ul>
+            <li>Enquêtes (échelles d'incertitude perçue, formalisation, centralisation).</li>
+            <li>Indicateurs objectifs (taille en effectifs, nombre de procédures écrites).</li>
+            <li>Mesures de performance (rentabilité, délai, qualité) pour comparer "fit".</li>
+            <li>Régressions multivariées / analyses de modération pour tester les relations.</li>
+          </ul>
+        </div>
+
+        <nav class="nav">
+          <label for="s10" class="btn prev">Précédent</label>
+          <label for="s12" class="btn next">Outils</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 12: Outils pratiques -->
+    <section class="slide s12" aria-label="Outils">
+      <div class="panel">
+        <h2>Outils pratiques pour les managers</h2>
+        <div class="content">
+          <ul>
+            <li>Diagnostic de contingence : matrice incertitude/complexité → choix structurels.</li>
+            <li>Mapping des interdépendances : flux d'information & processus.</li>
+            <li>Tableaux de bord (KPIs adaptés au "fit").</li>
+            <li>Workshops cross-fonctionnels pour définir intégration vs différenciation.</li>
+          </ul>
+        </div>
+
+        <nav class="nav">
+          <label for="s11" class="btn prev">Précédent</label>
+          <label for="s13" class="btn next">Modèles</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 13: Modèles (vue d'ensemble) -->
+    <section class="slide s13" aria-label="Modèles 1">
+      <div class="panel">
+        <h2>Principaux modèles de contingence</h2>
+        <div class="grid-3">
+          <div class="card-mini">
+            <h3>Burns & Stalker</h3>
+            <p>Mécaniste vs organique selon stabilité.</p>
+          </div>
+          <div class="card-mini">
+            <h3>Lawrence & Lorsch</h3>
+            <p>Différenciation & intégration entre unités.</p>
+          </div>
+          <div class="card-mini">
+            <h3>Woodward</h3>
+            <p>Technologie & adaptation structurelle (production).</p>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <label for="s12" class="btn prev">Précédent</label>
+          <label for="s14" class="btn next">Modèles détaillés</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 14: Modèle Burns & Stalker -->
+    <section class="slide s14" aria-label="Burns & Stalker">
+      <div class="panel">
+        <h2>Burns & Stalker — Mécaniste vs Organique</h2>
+        <div class="content scrollable">
+          <p>Mécaniste : hiérarchie, tâches définies, formalisation → approprié pour environnements stables.</p>
+          <p>Organique : décentralisation, communication informelle, équipes interfonctionnelles → nécessaire en contexte d'innovation.</p>
+
+          <h3>Implications managériales</h3>
+          <ul>
+            <li>Recrutement : compétences transversales pour organique.</li>
+            <li>Processus RH : formation continue, rotation des rôles.</li>
+            <li>Gouvernance : délégation et empowerment.</li>
+          </ul>
+        </div>
+
+        <nav class="nav">
+          <label for="s13" class="btn prev">Précédent</label>
+          <label for="s15" class="btn next">Lawrence & Lorsch</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 15: Lawrence & Lorsch -->
+    <section class="slide s15" aria-label="Lawrence & Lorsch">
+      <div class="panel">
+        <h2>Lawrence & Lorsch — Différenciation & Intégration</h2>
+        <div class="content">
+          <p>Chaque sous-unité développe des structures adaptées (différenciation). Le défi est d'assurer l'intégration (coordination) pour atteindre les objectifs globaux.</p>
+
+          <h3>Mécanismes d'intégration</h3>
+          <ul>
+            <li>Comités transverses</li>
+            <li>Rôles de liaison</li>
+            <li>Processus standardisés pour points critiques</li>
+          </ul>
+        </div>
+
+        <nav class="nav">
+          <label for="s14" class="btn prev">Précédent</label>
+          <label for="s16" class="btn next">Woodward & autres</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 16: Woodward & Galbraith -->
+    <section class="slide s16" aria-label="Woodward Galbraith">
+      <div class="panel">
+        <h2>Woodward & Galbraith</h2>
+        <div class="content">
+          <p>Woodward : lien entre technologie de production et structure. Galbraith : conception organisationnelle avec focus sur flux d'information et ressources tampons ("slack").</p>
+
+          <h3>Usage</h3>
+          <ul>
+            <li>Cartographier technologie → recommander formalisation/centralisation</li>
+            <li>Design organisationnel → identifier slack resources pour capacité d'adaptation</li>
+          </ul>
+        </div>
+
+        <nav class="nav">
+          <label for="s15" class="btn prev">Précédent</label>
+          <label for="s17" class="btn next">Cas pratique #1</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 17: Cas pratique 1 (start-up) -->
+    <section class="slide s17" aria-label="Cas 1">
+      <div class="panel">
+        <h2>Cas pratique 1 — Start-up technologique</h2>
+        <div class="content scrollable">
+          <p>Contexte : 120 employés, marché volatile, besoin d'innovation rapide.</p>
+          <p>Décision : structure organique, squads cross-fonctionnels, Product Owner, cycles itératifs.</p>
+          <h3>Résultats attendus</h3>
+          <ul>
+            <li>Réduction du time-to-market</li>
+            <li>Amélioration du feedback utilisateur</li>
+            <li>Augmentation de la rétention des talents</li>
+          </ul>
+        </div>
+
+        <nav class="nav">
+          <label for="s16" class="btn prev">Précédent</label>
+          <label for="s18" class="btn next">Cas 2</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 18: Cas pratique 2 (industrie) -->
+    <section class="slide s18" aria-label="Cas 2">
+      <div class="panel">
+        <h2>Cas pratique 2 — Industrie manufacturière</h2>
+        <div class="content scrollable">
+          <p>Contexte : production en série, forte contrainte réglementaire, faible incertitude sur processus.</p>
+          <p>Décision : structure mécaniste, formalisation élevée, qualité et conformité prioritaires.</p>
+          <h3>Mesures</h3>
+          <ul>
+            <li>Procédures strictes</li>
+            <li>Formation spécialisée</li>
+            <li>Contrôles qualité robustes</li>
+          </ul>
+        </div>
+
+        <nav class="nav">
+          <label for="s17" class="btn prev">Précédent</label>
+          <label for="s19" class="btn next">Cas 3</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 19: Cas pratique 3 (multinationale) -->
+    <section class="slide s19" aria-label="Cas 3">
+      <div class="panel">
+        <h2>Cas pratique 3 — Multinationale</h2>
+        <div class="content scrollable">
+          <p>Contexte : filiales internationales, diversité culturelle, stratégie globale mais adaptation locale requise.</p>
+          <p>Décision : combinaison de centralisation stratégique (politiques & marque) et décentralisation opérationnelle (local market).</p>
+          <h3>Outils</h3>
+          <ul>
+            <li>Standards globaux + autonomie locale</li>
+            <li>Plateformes communes (IT) pour intégration</li>
+            <li>Rôles de gouvernance & liaison</li>
+          </ul>
+        </div>
+
+        <nav class="nav">
+          <label for="s18" class="btn prev">Précédent</label>
+          <label for="s20" class="btn next">Cas 4 — ONG / Public</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 20: Cas pratique 4 (ONG / secteur public) -->
+    <section class="slide s20" aria-label="Cas 4">
+      <div class="panel">
+        <h2>Cas pratique 4 — ONG / Secteur public</h2>
+        <div class="content">
+          <p>Contexte : contraintes budgétaires, multi-parties prenantes, objectifs sociaux.</p>
+          <p>Décision : structures hybrides, forte coordination inter-organisationnelle, mécanismes formels de reporting et de collaboration.</p>
+        </div>
+
+        <nav class="nav">
+          <label for="s19" class="btn prev">Précédent</label>
+          <label for="s21" class="btn next">Implémentation — Roadmap</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 21: Roadmap d'implémentation (1/4) -->
+    <section class="slide s21" aria-label="Roadmap 1">
+      <div class="panel">
+        <h2>Implémentation — Étape 1 : Diagnostic</h2>
+        <div class="content scrollable">
+          <ol>
+            <li>Identifier les contingences clés (analyse SWOT, PESTEL, interviews).</li>
+            <li>Mesurer structure actuelle (centralisation, formalisation, flux).</li>
+            <li>Cartographier processus critiques et dépendances.</li>
+            <li>Prioriser les zones à ajuster (impact x effort).</li>
+          </ol>
+          <p class="hint">Outils recommandés : ateliers, questionnaires, shadowing, data analytics.</p>
+        </div>
+
+        <nav class="nav">
+          <label for="s20" class="btn prev">Précédent</label>
+          <label for="s22" class="btn next">Roadmap 2</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 22: Roadmap (2/4) -->
+    <section class="slide s22" aria-label="Roadmap 2">
+      <div class="panel">
+        <h2>Implémentation — Étape 2 : Conception</h2>
+        <div class="content">
+          <ul>
+            <li>Définir options structurelles compatibles avec contingences.</li>
+            <li>Concevoir mécanismes d'intégration (rôles, comités, processus).</li>
+            <li>Plan de communication et gestion du changement.</li>
+            <li>Prototype / pilote sur périmètre limité.</li>
+          </ul>
+        </div>
+
+        <nav class="nav">
+          <label for="s21" class="btn prev">Précédent</label>
+          <label for="s23" class="btn next">Roadmap 3</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 23: Roadmap (3/4) -->
+    <section class="slide s23" aria-label="Roadmap 3">
+      <div class="panel">
+        <h2>Implémentation — Étape 3 : Piloter et Apprendre</h2>
+        <div class="content">
+          <ul>
+            <li>Lancer pilotes, recueillir données & feedback.</li>
+            <li>Mesurer indicateurs clés (KPIs) définis.</li>
+            <li>Ajuster structure/processus selon retours.</li>
+            <li>Documenter apprentissages et diffuser bonnes pratiques.</li>
+          </ul>
+        </div>
+
+        <nav class="nav">
+          <label for="s22" class="btn prev">Précédent</label>
+          <label for="s24" class="btn next">Roadmap 4</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 24: Roadmap (4/4) -->
+    <section class="slide s24" aria-label="Roadmap 4">
+      <div class="panel">
+        <h2>Implémentation — Étape 4 : Généralisation & Gouvernance</h2>
+        <div class="content">
+          <ul>
+            <li>Plan de déploiement progressif.</li>
+            <li>Mécanismes de gouvernance pour maintenir "fit".</li>
+            <li>Revue périodique & veille stratégique.</li>
+            <li>Investir dans capacités dynamiques (formation, R&D).</li>
+          </ul>
+        </div>
+
+        <nav class="nav">
+          <label for="s23" class="btn prev">Précédent</label>
+          <label for="s25" class="btn next">Métriques</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 25: KPIs & Mesures -->
+    <section class="slide s25" aria-label="KPIs">
+      <div class="panel">
+        <h2>KPIs & indicateurs pour évaluer le fit</h2>
+        <div class="content scrollable">
+          <ul>
+            <li>Performance opérationnelle (délais, qualité, coût)</li>
+            <li>Performance stratégique (innovation, parts de marché)</li>
+            <li>Agilité (time-to-decision, time-to-market)</li>
+            <li>Engagement des employés & turnover</li>
+            <li>Indice d'alignement (score composite mesurant fit entre stratégie/structure)</li>
+          </ul>
+          <p>Construire un tableau de bord d'alignement : combiner mesures structurelles et outcomes.</p>
+        </div>
+
+        <nav class="nav">
+          <label for="s24" class="btn prev">Précédent</label>
+          <label for="s26" class="btn next">Tableaux & exemples</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 26: Tableaux d'exemples -->
+    <section class="slide s26" aria-label="Tableaux">
+      <div class="panel">
+        <h2>Exemples de tableaux de bord</h2>
+        <div class="content">
+          <p>Exemple simplifié :</p>
+          <table class="mini-table" role="table">
+            <thead><tr><th>Indicateur</th><th>Cible</th><th>Mesure</th><th>Commentaires</th></tr></thead>
+            <tbody>
+              <tr><td>Time-to-market</td><td>&lt; 8 sem.</td><td>6 sem.</td><td>OK (squad A)</td></tr>
+              <tr><td>Taux de conformité</td><td>> 98%</td><td>99.2%</td><td>Conforme</td></tr>
+              <tr><td>Employee NPS</td><td>> 30</td><td>22</td><td>Plan action RH</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <nav class="nav">
+          <label for="s25" class="btn prev">Précédent</label>
+          <label for="s27" class="btn next">Limites</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 27: Limites & critiques -->
+    <section class="slide s27" aria-label="Limites">
+      <div class="panel">
+        <h2>Limites, critiques et risques</h2>
+        <div class="content scrollable">
+          <ul>
+            <li>Complexité diagnostique : risque d'erreur de diagnostic.</li>
+            <li>Coût et résistance : transition coûteuse et résistances culturelles.</li>
+            <li>Risque de "sur-adaptation" : changement trop fréquent peut nuire à la stabilité.</li>
+            <li>Problèmes de mesure : variables difficiles à quantifier (culture, inter-dépendance).</li>
+          </ul>
+        </div>
+
+        <nav class="nav">
+          <label for="s26" class="btn prev">Précédent</label>
+          <label for="s28" class="btn next">Extensions modernes</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 28: Extensions modernes -->
+    <section class="slide s28" aria-label="Extensions">
+      <div class="panel">
+        <h2>Extensions & approches contemporaines</h2>
+        <div class="content">
+          <ul>
+            <li>Approche socio-technique : intégration des facteurs humains et techniques.</li>
+            <li>Capacités dynamiques et ambidextrie organisationnelle (exploitation vs exploration).</li>
+            <li>Contingence institutionnelle : normes et pressions externes.</li>
+            <li>Data-driven design : utiliser analytics pour diagnostiquer fit en continu.</li>
+          </ul>
+        </div>
+
+        <nav class="nav">
+          <label for="s27" class="btn prev">Précédent</label>
+          <label for="s29" class="btn next">Exercices</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 29: Exercices & QCM -->
+    <section class="slide s29" aria-label="Exercices">
+      <div class="panel">
+        <h2>Exercices pratiques & QCM</h2>
+        <div class="content scrollable">
+          <h3>Exercice 1 — Diagnostic rapide</h3>
+          <p>Choisis une organisation : liste 5 contingences, décris la structure actuelle, propose 3 ajustements et justifie.</p>
+
+          <h3>QCM (autodiagnostic)</h3>
+          <ol>
+            <li>Si l'environnement change très vite, il faut : a) augmenter formalisation b) décentraliser c) réduire communication (réponse recommandée : b)</li>
+            <li>Différenciation signifie : a) spécialisation des unités b) centralisation c) réduction des rôles (réponse : a)</li>
+          </ol>
+
+          <h3>Exercice 2 — Cas réel</h3>
+          <p>Prends un cas (start-up / usine / ONG). Rédige une feuille de route de 6 mois pour aligner structure & stratégie.</p>
+        </div>
+
+        <nav class="nav">
+          <label for="s28" class="btn prev">Précédent</label>
+          <label for="s30" class="btn next">Bibliographie</label>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Slide 30: Conclusion & Bibliographie -->
+    <section class="slide s30" aria-label="Conclusion">
+      <div class="panel">
+        <h2>Conclusion & bibliographie</h2>
+        <div class="content">
+          <p>La théorie de la contingence reste un cadre essentiel pour penser la conception organisationnelle : elle demande diagnostic, expérimentation et ajustement continu. La clé est de développer des capacités d'apprentissage et des mécanismes de gouvernance qui maintiennent le "fit" dans le temps.</p>
+
+          <h3>Bibliographie sélective</h3>
+          <ul class="biblio">
+            <li>Burns, T., & Stalker, G. M. (1961). The Management of Innovation.</li>
+            <li>Lawrence, P. R., & Lorsch, J. W. (1967). Organization and Environment.</li>
+            <li>Woodward, J. (1965). Industrial Organization: Theory and Practice.</li>
+            <li>Galbraith, J. (1973). Designing Complex Organizations.</li>
+            <li>Teece, Pisano & Shuen (1997). Dynamic Capabilities and Strategic Management.</li>
+            <li>DiMaggio & Powell (1983). The Iron Cage Revisited (institutional theory).</li>
+          </ul>
+
+          <footer class="end">
+            <p>Merci — Contact : Ali · Ilyass · Ayman</p>
+          </footer>
+        </div>
+
+        <nav class="nav">
+          <label for="s29" class="btn prev">Précédent</label>
+          <label for="s01" class="btn next">Retour au début</label>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer / Progress -->
+  <footer class="bottom" role="contentinfo">
+    <div class="progress">
+      <div class="bar"></div>
+    </div>
+    <div class="page-indicator">Slide <span class="num">1</span>/30</div>
+  </footer>
+
+  <!-- NOTE: no JavaScript, all navigation via labels/radios -->
+</body>
+</html>
